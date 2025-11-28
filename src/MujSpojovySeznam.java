@@ -12,6 +12,14 @@ public class MujSpojovySeznam implements Iterable<Integer> {
         this.size = 0;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
     public void addFirst(int value){
         Node newNode = new Node(value);
         newNode.next = head;
@@ -41,6 +49,6 @@ public class MujSpojovySeznam implements Iterable<Integer> {
 
     @Override
     public Iterator<Integer> iterator() {
-        return null;
+        return new LinkedListIterator(this);
     }
 }
